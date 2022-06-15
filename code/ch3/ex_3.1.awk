@@ -5,9 +5,9 @@
 # output: sums of numeric columns
 # assumes every line has same layout
 
-NR==1 { nfld = NF
+nfld == 0 && NF > 0 { nfld = NF
 		for (i = 1; i <= NF; i++)
-			numcol[i] = isnum($i)
+	        numcol[i] = isnum($i)
 	  }
 	  
 	  { for (i = 1; i <= NF; i++)
